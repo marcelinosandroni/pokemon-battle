@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fundao {
+  background-color: gray;
+  font-size: 3em;
+  color: white;
+}
+
+.start-battle {
+  font-size: 3em;
+
+}
+
