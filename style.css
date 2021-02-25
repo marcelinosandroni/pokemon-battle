@@ -1,17 +1,111 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --amarelo: #fbe200;
 }
 
-.fundao {
-  background-color: gray;
-  font-size: 3em;
-  color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; /* horizontal */
+  text-align: center;
+}
+
+h1 {
+  font-size: 5em;
+  color: gold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.tela-1,
+.tela-2 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  flex-basis: 100%;
+  align-items: center;
+  /*background-color: var(--amarelo)*/
+}
+
+.tela-1 {
+  background: url(./img/bgpkm.jpg);
+  background-position: center;
+  background-size: cover;
+  width:100%;
+}
+
+.tela-2 {
+  background: gold;
+  height: 100vh;
+  width: 100vw;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+    color: black;
+  }
+  to {
+    opacity: 0;
+    color: var(--amarelo);
+  }
 }
 
 .start-battle {
   font-size: 3em;
-
+  background-color: white;
+  border: 0;
+  animation-name: blink;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
+.invisible {
+  display: none;
+}
+
+.logo {
+  max-width: 500px;
+}
+
+.barraHP-inimigo,
+.barraHP-jogador{
+  position: absolute;
+  width: 150px;
+  height: 30px;
+  background-color: white;
+  font-size: 30px;
+}
+
+.barraHP-inimigo {
+  top: 0;
+  left: 0;
+}
+
+.barraHP-jogador {
+  bottom: 0;
+  right: 0;
+}
+
+.barrahp-progresso {
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+}
+
+.inimigo {
+  
+}
+
+.jogador {
+  
+}
