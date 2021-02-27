@@ -4,14 +4,224 @@
     box-sizing: border-box;
 }
 
-.fundao {
-  background-color: gray;
-  font-size: 3em;
-  color: white;
+ .mainScreen {
+  background: url(img/Pokémon™-wallpaper-3.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Righteous', sans-serif;  
 }
 
-.start-battle {
-  font-size: 3em;
-
+ .mainScreen img {
+  margin-top: -20%;
+  max-width: 600px;
+  z-index: 100;
 }
 
+ .battle {
+  background-color: #f00707;
+  border: 8px solid #1f5cac;
+  border-radius: 20px;
+  width: 430px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -120px;
+  margin-left: 35px;
+}
+
+ .battle p {
+  font-size: 4rem;
+  letter-spacing: .3rem;
+  color: #fff;
+}
+
+ .button {
+  margin-top: 50px;
+  position: absolute;
+  bottom: 20%;
+  cursor: pointer;
+  animation: blinkBtn .7s ease-in-out infinite;
+}
+
+ .button p {
+  color: #ffcc00;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: #0B285F;
+  font-size: 3rem;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+}
+
+@keyframes blinkBtn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+ .chooseScreen {
+  position: relative;
+  background-color: #004D8E;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  font-family: 'Righteous', sans-serif;
+  position: relative;
+  z-index: -1;
+  overflow-x: hidden;
+}
+
+ .chooseScreen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/bgpkm.jpg);
+  background-position: center ;
+  background-size: cover;
+  opacity: .2;
+  z-index: -1;
+}
+
+ .choosePkm {
+  background-color: #f00707;
+  border: 8px solid #1f5cac;
+  border-radius: 20px;
+  width: 380px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+ }
+
+ .chooseScreen img {
+  max-width: 500px;
+  margin-top: -4rem;
+}
+ .choosePkm p {
+   letter-spacing: .6rem;
+   color: #fff;
+   text-transform: uppercase;
+   font-size: 2rem;
+ }
+
+ .pokemonSelect {
+  margin-top: 80px; 
+  display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   padding: 0 3em;
+ }
+ .squirtle, .charmander, .bulbasaur {
+   cursor: pointer;
+   position: relative;
+ }
+
+ .squirtle img:first-child {
+   position: absolute;
+   width: 100px;
+   left: 110px;
+   bottom: -4%;
+   animation: rotatepokeball 2s linear infinite;
+ }
+
+ .squirtle img:nth-child(2) {
+   transform: scaleX(-1);
+   width: 200px;
+ }
+
+.charmander img:first-child {
+  position: absolute;
+   width: 100px;
+   left: 65%;
+   bottom: 0;
+   animation: rotatepokeball 2s linear infinite;
+}
+
+ .charmander img:nth-child(2) {
+  width: 200px;
+  transform: scaleX(1);
+}
+
+.bulbasaur img:first-child {
+  position: absolute;
+   width: 100px;
+   right: 77%;
+   bottom: -9%;
+   animation: rotatepokeball 2s linear infinite;
+}
+
+.bulbasaur img:nth-child(2) {
+  width: 200px;
+  transform: scaleX(1);
+}
+
+@keyframes rotatepokeball {
+0% {
+  transform: rotate(15deg);
+}
+50% {
+  transform: rotate(-15deg);
+}
+100% {
+  transform: rotate(15deg);
+}
+}
+
+
+/* ================== fight screen ================= */
+
+.fightScreen {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.squirtleFight {
+  transform: scaleX(-1);
+}
+
+.charmanderFight {
+  position: relative;
+  
+}
+
+.fireball {
+  position: absolute;
+  width: 50px;
+  top: 100px;
+  animation: fire 2s linear infinite;
+}
+
+@keyframes fire {
+  0%{
+    opacity: .5;
+    left: 17%;
+    top: 40%;
+    transform: rotate(0) scale(1);
+  }
+  100%{
+    opacity: 1;
+    left: 17%;
+    top: 40%;
+    transform: rotate(360deg) scale(3);
+  }
+}
